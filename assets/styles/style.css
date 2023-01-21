@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    font-size: 20px;
+    
+}
+
+.container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 15% 1fr 15%;
+    grid-template-areas:
+    "header header header"
+    "main-container main-container main-container"
+    "footer footer footer"
+}
+
+.main-container {
+    display: grid;
+    border: 1px solid black;
+    width: 100vw;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+    "main aside";
+}
+
+.aside {
+    background-color:rgb(180, 194, 238);
+    text-align: center;
+    padding: 20px;
+}
+
+.main {
+    background-color: bisque;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 
+    "main main"
+    "main main"
+    "main main"
+    "main main"
+    "more1 more2"
+    "more3 more3";
+    text-align: center;
+    padding: 20px;  
+}
+
+.more1 {
+    grid-area: more1;
+}
+
+.more2 {
+    grid-area: more2;
+}
+
+.more3 {
+    grid-area: more3;
+}
+
+.more1, .more2, .more3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    border: 1px solid black;
+    margin: 10px;
+    
+}
+
+.header {
+    display: grid;
+    grid-area: header;
+    background-color: aqua;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+    }
+
+
+.footer {
+    display: grid;
+    grid-area: footer;
+    background-color: aqua;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;  
+    }
+
+.footer-section {
+    display: grid;
+    background-color: gray;
+    padding: 20px;
+    height: 90px;
+    justify-items: center;
+    align-items: center;    
+}
