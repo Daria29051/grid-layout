@@ -1,13 +1,15 @@
 * {
     box-sizing: border-box;
     font-size: 20px;
+    margin: 0;
     
 }
 
 .container {
     display: grid;
     min-height: 100vh;
-    grid-template-columns: 2fr 2fr 2fr;
+    width: 100vw;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 15% 1fr 15%;
     grid-template-areas:
     "header header header"
@@ -17,7 +19,6 @@
 
 .main-container {
     display: grid;
-    border: 1px solid black;
     width: 100vw;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
@@ -28,23 +29,27 @@
     background-color:rgb(180, 194, 238);
     text-align: center;
     padding: 20px;
+    grid-area: aside;
 }
 
+
 .main {
-    background-color: bisque;
     display: grid;
+    background-color: bisque;
+    grid-area: main;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: 
-    "main main"
-    "main main"
-    "main main"
-    "main main"
+    "main-text main-text"
+    "main-text main-text"
+    "main-text main-text"
+    "main-text main-text"
     "more1 more2"
     "more3 more3";
     text-align: center;
     padding: 20px;  
 }
+
 
 .more1 {
     grid-area: more1;
@@ -68,6 +73,11 @@
     
 }
 
+.main-text {
+    grid-area: main-text;
+    justify-content: center;
+}
+
 .header {
     display: grid;
     grid-area: header;
@@ -85,15 +95,14 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 20px;  
+    justify-items: center;
     }
 
 .footer-section {
     display: grid;
     background-color: gray;
     padding: 20px;
-    height: 90px;
+    height: 70px;
     justify-items: center;
     align-items: center;    
 }
